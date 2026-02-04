@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine’s Day, My Love ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 80px 20px 40px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+
+    .heart {
+      font-size: 4rem;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #ff4d6d;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine’s Day</h1>
+    <p>Celebrating our love, our memories, and every heartbeat we share</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>For the Love of My Life 💖</h2>
+      <p>
+        On this Valentine’s Day, I want you to know how deeply you mean to me. 💕
+        Every moment with you feels like a beautiful dream I never want to wake up from.
+        Your smile lights up my world, your voice calms my heart, and your love completes me.
+        With you, even the simplest days feel magical.
+      </p>
+      <button onclick="showMessage()">Click for a Surprise</button>
+      <p id="surprise" style="margin-top:20px; font-size:1.3rem; display:none;">
+        I choose you. Today, tomorrow, and forever. ❤️
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Made with endless love ❤️ Just for You
+  </footer>
+
+  <script>
+    function showMessage() {
+      document.getElementById('surprise').style.display = 'block';
+    }
+
+    // Create floating hearts
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }, 500);
+  </script>
+
+</body>
+</html>
